@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bezirkslisten</title>
+    <link href="./seat_calculator.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700,800" rel="stylesheet" />
+
+  </head>
+  <body>
+
+<!-- Table -->    
+    <table>
+      <colgroup>
+        <col span="1" style="background-color: lightgrey">
+      </colgroup>
+      <tr>
+        <th class="top-bar-left"><div class="firstcolumn">Analysejahr auswählen:</div></th>
+     
+        <th class="top-bar"> 
+<!--           <input type="radio" id="2023" name="year" class="year" value="2023"> 
+          <label for="2023">2023</label><br> -->   
+        </th>  
+  
+        <th class="top-bar"> 
+          <input type="radio" id="2021" name="year" class="year" value="2021" checked="checked"> 
+          <label for="2021">2021</label><br>
+        </th> 
+ 
+        <th class="top-bar"> 
+          <input type="radio" id="2016" name="year" class="year" value="2016"> 
+          <label for="2016">2016</label><br>
+        </th> 
+        <th class="top-bar"></th>
+        <th class="top-bar"></th>
+        <th class="top-bar"></th>
+        <th class="top-bar"></th>
+        <th class="top-bar-right"></th>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Partei</div></th>
+        <th>SPD</th>
+        <th>CDU</th>
+        <th>B90/GRÜNE</th>
+        <th>LINKE</th>
+        <th>AfD</th>
+        <th>FDP</th>
+        <th>Sonstige</th>
+        <th>Gesamt</th>
+      </tr>      
+      <tr>
+        <th class="line-solid-left"><div class="firstcolumn">Typ Liste</div></th>
+        <th class="line-solid-bottom"> 
+          <input type="radio" id="spd-landlist" name="spd-list" value="landlist"> 
+            <label for="spd-landlist">Landesliste</label><br>
+          <input type="radio" id="spd-districtlist" name="spd-list" value="districtlist" checked="checked">
+            <label for="spd-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="cdu-landlist" name="cdu-list" value="landlist"> 
+            <label for="cdu-landlist">Landesliste</label><br>
+          <input type="radio" id="cdu-districtlist" name="cdu-list" value="districtlist" checked="checked">
+            <label for="cdu-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="gruene-landlist" name="gruene-list" value="landlist" checked="checked"> 
+            <label for="gruene-landlist">Landesliste</label><br>
+          <input type="radio" id="gruene-districtlist" name="gruene-list" value="districtlist">
+            <label for="gruene-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="linke-landlist" name="linke-list" value="landlist" checked="checked"> 
+            <label for="linke-landlist">Landesliste</label><br>
+          <input type="radio" id="linke-districtlist" name="linke-list" value="districtlist">
+            <label for="linke-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="afd-landlist" name="afd-list" value="landlist" checked="checked"> 
+            <label for="afd-landlist">Landesliste</label><br>
+          <input type="radio" id="afd-districtlist" name="afd-list" value="districtlist">
+            <label for="afd-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="fdp-landlist" name="fdp-list" value="landlist"> 
+          <label for="fdp-landlist">Landesliste</label><br>
+        <input type="radio" id="fdp-districtlist" name="fdp-list" value="districtlist" checked="checked">
+          <label for="fdp-districtlist">Bezirkslisten</label><br>
+        </th>
+        <th class="line-solid-bottom"></th>
+        <th class="line-solid-right"></th>
+      </tr>
+      <tr>
+        <td><div class="firstcolumn">Zweitstimmen (%)</div></td>
+        <td><span id="spd-secondary-vote-percentage"></span></td>
+        <td><span id="cdu-secondary-vote-percentage"></span></td>
+        <td><span id="gruene-secondary-vote-percentage"></span></td>
+        <td><span id="linke-secondary-vote-percentage"></span></td>
+        <td><span id="afd-secondary-vote-percentage"></span></td>
+        <td><span id="fdp-secondary-vote-percentage"></span></td>
+        <td><span id="others-secondary-vote-percentage"></span></td>
+        <td>100%</td>
+      </tr>
+      <tr>
+        <th class="line-left"><div class="firstcolumn">AGH-Mandate Gesamt</div></th>
+        <td class="line-bottom"><strong><span id="spd-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="cdu-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="gruene-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="linke-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="afd-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="fdp-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong>-</strong></td>
+        <td class="line-right"><strong><span id="total-seats-allocated2"></span></strong></td>
+      </tr>
+      <tr>
+        <td><div class="firstcolumn">davon Grundmandate</div></td>
+        <td><span id="spd-seats-allocated"></span></td>
+        <td><span id="cdu-seats-allocated"></span></td>
+        <td><span id="gruene-seats-allocated"></span></td>
+        <td><span id="linke-seats-allocated"></span></td>
+        <td><span id="afd-seats-allocated"></span></td>
+        <td><span id="fdp-seats-allocated"></span></td>
+        <td>-</td>
+        <td><span id="total-seats-allocated"></span></td>
+      </tr>
+      <tr>
+        <td><div class="firstcolumn">davon Überhangmandate</div></td>
+        <td><span id="spd-overhang-seats"></span></td>
+        <td><span id="cdu-overhang-seats"></span></td>
+        <td><span id="gruene-overhang-seats"></span></td>
+        <td><span id="linke-overhang-seats"></span></td>
+        <td><span id="afd-overhang-seats"></span></td>
+        <td><span id="fdp-overhang-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-overhang-seats"></span></td>
+      </tr>
+      <tr>
+        <td class="line-left"><div class="firstcolumn">davon Ausgleichsmandate</div></td>
+        <td class="line-bottom"><span id="spd-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="cdu-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="gruene-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="linke-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="afd-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="fdp-compensation-seats"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-compensation-seats"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">davon Direktmandate</div></td>
+        <td><span id="spd-seats-won-directly"></span></td>
+        <td><span id="cdu-seats-won-directly"></span></td>
+        <td><span id="gruene-seats-won-directly"></span></td>
+        <td><span id="linke-seats-won-directly"></span></td>
+        <td><span id="afd-seats-won-directly"></span></td>
+        <td><span id="fdp-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-solid-left"><div class="firstcolumn">davon Listenmandate</div></td>
+        <td class="line-solid-bottom"><span id="spd-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="cdu-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="gruene-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="linke-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="afd-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="fdp-list-seats"></span></td>
+        <td class="line-solid-bottom">-</td>
+        <td class="line-solid-right"><span id="total-list-seats"></span></td>
+      </tr>
+      <tr>
+        <td><div class="firstcolumn">Detailanalyse Direkt- und Listenmandate</div></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 01 Mitte</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">01 Direktmandate</div></td>
+        <td><span id="spd-01-seats-won-directly"></span></td>
+        <td><span id="cdu-01-seats-won-directly"></span></td>
+        <td><span id="gruene-01-seats-won-directly"></span></td>
+        <td><span id="linke-01-seats-won-directly"></span></td>
+        <td><span id="afd-01-seats-won-directly"></span></td>
+        <td><span id="fdp-01-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-01-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">01 Bezirksliste</div></td>
+        <td><span id="spd-01-list-seats"></span></td>
+        <td><span id="cdu-01-list-seats"></span></td>
+        <td><span id="gruene-01-list-seats"></span></td>
+        <td><span id="linke-01-list-seats"></span></td>
+        <td><span id="afd-01-list-seats"></span></td>
+        <td><span id="fdp-01-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-01-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">01 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-01-total-seats"></span></td>
+      </tr>
+        <th><div class="firstcolumn">Bezirk 02 Friedrichshain-Kreuzberg</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">02 Direktmandate</div></td>
+        <td><span id="spd-02-seats-won-directly"></span></td>
+        <td><span id="cdu-02-seats-won-directly"></span></td>
+        <td><span id="gruene-02-seats-won-directly"></span></td>
+        <td><span id="linke-02-seats-won-directly"></span></td>
+        <td><span id="afd-02-seats-won-directly"></span></td>
+        <td><span id="fdp-02-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-02-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">02 Bezirksliste</div></td>
+        <td><span id="spd-02-list-seats"></span></td>
+        <td><span id="cdu-02-list-seats"></span></td>
+        <td><span id="gruene-02-list-seats"></span></td>
+        <td><span id="linke-02-list-seats"></span></td>
+        <td><span id="afd-02-list-seats"></span></td>
+        <td><span id="fdp-02-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-02-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">02 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-02-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 03 Pankow</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">03 Direktmandate</div></td>
+        <td><span id="spd-03-seats-won-directly"></span></td>
+        <td><span id="cdu-03-seats-won-directly"></span></td>
+        <td><span id="gruene-03-seats-won-directly"></span></td>
+        <td><span id="linke-03-seats-won-directly"></span></td>
+        <td><span id="afd-03-seats-won-directly"></span></td>
+        <td><span id="fdp-03-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-03-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">03 Bezirksliste</div></td>
+        <td><span id="spd-03-list-seats"></span></td>
+        <td><span id="cdu-03-list-seats"></span></td>
+        <td><span id="gruene-03-list-seats"></span></td>
+        <td><span id="linke-03-list-seats"></span></td>
+        <td><span id="afd-03-list-seats"></span></td>
+        <td><span id="fdp-03-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-03-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">03 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-03-total-seats"></span></td>
+      </tr>     
+      <tr>
+        <th><div class="firstcolumn">Bezirk 04 Charlottenburg-Wilmersdorf</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">04 Direktmandate</div></td>
+        <td><span id="spd-04-seats-won-directly"></span></td>
+        <td><span id="cdu-04-seats-won-directly"></span></td>
+        <td><span id="gruene-04-seats-won-directly"></span></td>
+        <td><span id="linke-04-seats-won-directly"></span></td>
+        <td><span id="afd-04-seats-won-directly"></span></td>
+        <td><span id="fdp-04-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-04-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">04 Bezirksliste</div></td>
+        <td><span id="spd-04-list-seats"></span></td>
+        <td><span id="cdu-04-list-seats"></span></td>
+        <td><span id="gruene-04-list-seats"></span></td>
+        <td><span id="linke-04-list-seats"></span></td>
+        <td><span id="afd-04-list-seats"></span></td>
+        <td><span id="fdp-04-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-04-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">04 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-04-total-seats"></span></td>
+      </tr> 
+      <tr>
+        <th><div class="firstcolumn">Bezirk 05 Spandau</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">05 Direktmandate</div></td>
+        <td><span id="spd-05-seats-won-directly"></span></td>
+        <td><span id="cdu-05-seats-won-directly"></span></td>
+        <td><span id="gruene-05-seats-won-directly"></span></td>
+        <td><span id="linke-05-seats-won-directly"></span></td>
+        <td><span id="afd-05-seats-won-directly"></span></td>
+        <td><span id="fdp-05-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-05-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">05 Bezirksliste</div></td>
+        <td><span id="spd-05-list-seats"></span></td>
+        <td><span id="cdu-05-list-seats"></span></td>
+        <td><span id="gruene-05-list-seats"></span></td>
+        <td><span id="linke-05-list-seats"></span></td>
+        <td><span id="afd-05-list-seats"></span></td>
+        <td><span id="fdp-05-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-05-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">05 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-05-total-seats" class="analysis"></span></td>
+      </tr> 
+      <tr>
+        <th><div class="firstcolumn">Bezirk 06 Steglitz-Zehlendorf</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">06 Direktmandate</div></td>
+        <td><span id="spd-06-seats-won-directly"></span></td>
+        <td><span id="cdu-06-seats-won-directly"></span></td>
+        <td><span id="gruene-06-seats-won-directly"></span></td>
+        <td><span id="linke-06-seats-won-directly"></span></td>
+        <td><span id="afd-06-seats-won-directly"></span></td>
+        <td><span id="fdp-06-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-06-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">06 Bezirksliste</div></td>
+        <td><span id="spd-06-list-seats"></span></td>
+        <td><span id="cdu-06-list-seats"></span></td>
+        <td><span id="gruene-06-list-seats"></span></td>
+        <td><span id="linke-06-list-seats"></span></td>
+        <td><span id="afd-06-list-seats"></span></td>
+        <td><span id="fdp-06-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-06-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">06 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-06-total-seats"></span></td>
+      </tr>   
+      <tr>
+        <th><div class="firstcolumn">Bezirk 07 Tempelhof-Schöneberg</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">07 Direktmandate</div></td>
+        <td><span id="spd-07-seats-won-directly"></span></td>
+        <td><span id="cdu-07-seats-won-directly"></span></td>
+        <td><span id="gruene-07-seats-won-directly"></span></td>
+        <td><span id="linke-07-seats-won-directly"></span></td>
+        <td><span id="afd-07-seats-won-directly"></span></td>
+        <td><span id="fdp-07-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-07-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">07 Bezirksliste</div></td>
+        <td><span id="spd-07-list-seats"></span></td>
+        <td><span id="cdu-07-list-seats"></span></td>
+        <td><span id="gruene-07-list-seats"></span></td>
+        <td><span id="linke-07-list-seats"></span></td>
+        <td><span id="afd-07-list-seats"></span></td>
+        <td><span id="fdp-07-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-07-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">07 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-07-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 08 Neukölln</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">08 Direktmandate</div></td>
+        <td><span id="spd-08-seats-won-directly"></span></td>
+        <td><span id="cdu-08-seats-won-directly"></span></td>
+        <td><span id="gruene-08-seats-won-directly"></span></td>
+        <td><span id="linke-08-seats-won-directly"></span></td>
+        <td><span id="afd-08-seats-won-directly"></span></td>
+        <td><span id="fdp-08-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-08-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">08 Bezirksliste</div></td>
+        <td><span id="spd-08-list-seats"></span></td>
+        <td><span id="cdu-08-list-seats"></span></td>
+        <td><span id="gruene-08-list-seats"></span></td>
+        <td><span id="linke-08-list-seats"></span></td>
+        <td><span id="afd-08-list-seats"></span></td>
+        <td><span id="fdp-08-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-08-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">08 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-08-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 09 Treptow-Köpenick</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">09 Direktmandate</div></td>
+        <td><span id="spd-09-seats-won-directly"></span></td>
+        <td><span id="cdu-09-seats-won-directly"></span></td>
+        <td><span id="gruene-09-seats-won-directly"></span></td>
+        <td><span id="linke-09-seats-won-directly"></span></td>
+        <td><span id="afd-09-seats-won-directly"></span></td>
+        <td><span id="fdp-09-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-09-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">09 Bezirksliste</div></td>
+        <td><span id="spd-09-list-seats"></span></td>
+        <td><span id="cdu-09-list-seats"></span></td>
+        <td><span id="gruene-09-list-seats"></span></td>
+        <td><span id="linke-09-list-seats"></span></td>
+        <td><span id="afd-09-list-seats"></span></td>
+        <td><span id="fdp-09-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-09-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">09 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-09-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 10 Marzahn-Hellersdorf</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">10 Direktmandate</div></td>
+        <td><span id="spd-10-seats-won-directly"></span></td>
+        <td><span id="cdu-10-seats-won-directly"></span></td>
+        <td><span id="gruene-10-seats-won-directly"></span></td>
+        <td><span id="linke-10-seats-won-directly"></span></td>
+        <td><span id="afd-10-seats-won-directly"></span></td>
+        <td><span id="fdp-10-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-10-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">10 Bezirksliste</div></td>
+        <td><span id="spd-10-list-seats"></span></td>
+        <td><span id="cdu-10-list-seats"></span></td>
+        <td><span id="gruene-10-list-seats"></span></td>
+        <td><span id="linke-10-list-seats"></span></td>
+        <td><span id="afd-10-list-seats"></span></td>
+        <td><span id="fdp-10-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-10-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">10 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-10-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 11 Lichtenberg</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">11 Direktmandate</div></td>
+        <td><span id="spd-11-seats-won-directly"></span></td>
+        <td><span id="cdu-11-seats-won-directly"></span></td>
+        <td><span id="gruene-11-seats-won-directly"></span></td>
+        <td><span id="linke-11-seats-won-directly"></span></td>
+        <td><span id="afd-11-seats-won-directly"></span></td>
+        <td><span id="fdp-11-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-11-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">11 Bezirksliste</div></td>
+        <td><span id="spd-11-list-seats"></span></td>
+        <td><span id="cdu-11-list-seats"></span></td>
+        <td><span id="gruene-11-list-seats"></span></td>
+        <td><span id="linke-11-list-seats"></span></td>
+        <td><span id="afd-11-list-seats"></span></td>
+        <td><span id="fdp-11-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-11-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">11 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="cdu-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-11-total-seats"></span></td>
+      </tr>
+      <tr>
+        <th><div class="firstcolumn">Bezirk 12 Reinickendorf</div></th>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">12 Direktmandate</div></td>
+        <td><span id="spd-12-seats-won-directly"></span></td>
+        <td><span id="cdu-12-seats-won-directly"></span></td>
+        <td><span id="gruene-12-seats-won-directly"></span></td>
+        <td><span id="linke-12-seats-won-directly"></span></td>
+        <td><span id="afd-12-seats-won-directly"></span></td>
+        <td><span id="fdp-12-seats-won-directly"></span></td>
+        <td>-</td>
+        <td><span id="total-12-seats-won-directly"></span></td>
+      </tr> 
+      <tr>
+        <td><div class="firstcolumn">12 Bezirksliste</div></td>
+        <td><span id="spd-12-list-seats"></span></td>
+        <td><span id="cdu-12-list-seats"></span></td>
+        <td><span id="gruene-12-list-seats"></span></td>
+        <td><span id="linke-12-list-seats"></span></td>
+        <td><span id="afd-12-list-seats"></span></td>
+        <td><span id="fdp-12-list-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-12-list-seats"></span></td>
+      </tr> 
+      <tr>
+        <td class="line-left"><div class="firstcolumn">12 Gesamtsitze</div></td>
+        <td class="line-bottom"><span id="spd-12-total-seats" class="analysis"></span></span></td>
+        <td class="line-bottom"><span id="cdu-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="gruene-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="linke-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="afd-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="fdp-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom">-</td>
+        <td class="line-right"><span id="total-12-total-seats"></span></td>
+      </tr>                                         
+      <tr>
+        <th><div class="firstcolumn">Landeslistenmandate</div></th>
+        <td><span id="spd-landlist-seats"></span></td>
+        <td><span id="cdu-landlist-seats"></span></td>
+        <td><span id="gruene-landlist-seats"></span></td>
+        <td><span id="linke-landlist-seats"></span></td>
+        <td><span id="afd-landlist-seats"></span></td>
+        <td><span id="fdp-landlist-seats"></span></td>
+        <td>-</td>
+        <td><span id="total-landlist-seats"></span></td>
+      </tr> 
+    </div>  
+    </table> 
+    
+    <script type="text/javascript" src="./data_2016.js"></script>
+    <script type="text/javascript" src="./data_2021.js"></script>
+<!--    <script type="text/javascript" src="./data_2023.js"></script> -->  
+    <script type="text/javascript" src="./seat_calculator.js"></script>
+
+  </body>
+</html>
