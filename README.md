@@ -16,12 +16,13 @@ The calculator works as a simple HTML document (seat_calculator.html)supplied by
 To run the calculator, simply copy the files to a web environment making sure the files sit in the same directory.
 
 <strong>File Overview</strong>
+<ul>
+<li>seat_calculator.html: summary table of the results</li>
+<li>seat_calculator.css: CSS file to make the HTML table look nice</li>
+<li>seat_calculator.js: determines the number of seats by party</li>
+<li>data_2016.js: data for the 2016 Berlin state election</li>
+<li>data_2021.js: data for the 2021 Berlin state election</li>
+</ul>
+<strong>Screenshot of the calculator in action</strong>
 
-seat_calculator.html: summary table of the results
-seat_calculator.css: CSS file to make the HTML table look nice
-seat_calculator.js: determines the number of seats by party
-data_2016.js: data for the 2016 Berlin state election
-data_2021.js: data for the 2021 Berlin state election
-
-Screenshot of the calculator in action
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/3532451/214544128-e2d70fa8-9bc5-4707-8e89-f727bf7c77e5.png">
