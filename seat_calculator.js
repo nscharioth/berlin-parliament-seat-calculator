@@ -109,6 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 fdp_districtlist_boolean = false
             }
 
+            let piraten_districtlist_boolean = false
+            const piraten_districtlist = document.getElementById("piraten-districtlist")
+            const piraten_landlist = document.getElementById("piraten-landlist")
+            if (piraten_districtlist.checked) {
+                piraten_districtlist_boolean = true
+            }
+            else if (piraten_landlist.checked) {
+                piraten_districtlist_boolean = false
+            }
+
 // 0.3 Set-up of the party array with initial 0 values for later use as well as set up HTML connections          
             let Parties = [
                 {Partyname: "SPD", FivePercentThreshold: true, Districtlist: spd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("spd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("spd-seats-won-directly")), ListSeatsHTML: (document.getElementById("spd-list-seats")), SeatsAllocatedHTML: (document.getElementById("spd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("spd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("spd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("spd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
@@ -201,6 +211,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("fdp-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("fdp-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-12-total-seats"))},
             ], },
+            {Partyname: "Piraten", FivePercentThreshold: true, Districtlist: piraten_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("piraten-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("piraten-seats-won-directly")), ListSeatsHTML: (document.getElementById("piraten-list-seats")), SeatsAllocatedHTML: (document.getElementById("piraten-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("piraten-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("piraten-compensation-seats")), OverhangSeatsHTML: (document.getElementById("piraten-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            Districtdata: [
+                    {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("piraten-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-01-total-seats"))},
+                    {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("piraten-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-02-total-seats"))},
+                    {DistrictNumber: "03", DistrictName: "Pankow", SeatsWonDirectlyHTML: (document.getElementById("piraten-03-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-03-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-03-total-seats"))},
+                    {DistrictNumber: "04", DistrictName: "Charlottenburg-Wilmersdorf", SeatsWonDirectlyHTML: (document.getElementById("piraten-04-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-04-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-04-total-seats"))},
+                    {DistrictNumber: "05", DistrictName: "Spandau", SeatsWonDirectlyHTML: (document.getElementById("piraten-05-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-05-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-05-total-seats"))},
+                    {DistrictNumber: "06", DistrictName: "Steglitz-Zehlendorf", SeatsWonDirectlyHTML: (document.getElementById("piraten-06-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-06-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-06-total-seats"))},
+                    {DistrictNumber: "07", DistrictName: "Tempelhof-Schöneberg", SeatsWonDirectlyHTML: (document.getElementById("piraten-07-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-07-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-07-total-seats"))},
+                    {DistrictNumber: "08", DistrictName: "Neukölln", SeatsWonDirectlyHTML: (document.getElementById("piraten-08-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-08-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-08-total-seats"))},
+                    {DistrictNumber: "09", DistrictName: "Treptow-Köpenick", SeatsWonDirectlyHTML: (document.getElementById("piraten-09-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-09-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-09-total-seats"))},
+                    {DistrictNumber: "10", DistrictName: "Marzahn-Hellersdorf", SeatsWonDirectlyHTML: (document.getElementById("piraten-10-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-10-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-10-total-seats"))},
+                    {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("piraten-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-11-total-seats"))},
+                    {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("piraten-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-12-total-seats"))},
+            ], },
             ]
 
 // 0.4 Various summary variables connected to HTML document            
@@ -244,14 +269,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const LandlistSeats_Linke_HTML = document.getElementById("linke-landlist-seats")
             const LandlistSeats_AfD_HTML = document.getElementById("afd-landlist-seats")
             const LandlistSeats_FDP_HTML = document.getElementById("fdp-landlist-seats")
+            const LandlistSeats_Piraten_HTML = document.getElementById("piraten-landlist-seats")
             const LandlistSeats_Total_HTML = document.getElementById("total-landlist-seats") 
 
-// 0.5 Get the actual data depending on the analysis year selected            
+// 0.5 Get the actual data depending on the analysis year selected     
+            const year2011 = document.getElementById("2011")       
             const year2016 = document.getElementById("2016")
             const year2021 = document.getElementById("2021")
             const year2023 = document.getElementById("2023")
 
-            if (year2016.checked) {
+            if (year2011.checked) {
+                data = data_2011
+            }
+            else if (year2016.checked) {
                 data = data_2016
             }
             else if (year2021.checked) {
@@ -261,7 +291,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 data = data_2023
             }
 
-            SecondaryVotesTotal = data["SecondaryVotesTotal"]
             SecondaryVotesTotalPlusOthers = data["SecondaryVotesTotalPlusOthers"]
             for (let i in Parties) {
                 Parties[i].SecondaryVotes = data["Parties"][i]["SecondaryVotes"]
@@ -332,13 +361,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 Party.SecondaryVotePercentage = PartySecondaryVotePercentage + "%"
                 if (PartySecondaryVotePercentage >= 5) {
                     Party.FivePercentThreshold = true
+                    let SecondaryVotes = Party.SecondaryVotes
+                    SecondaryVotesTotal+= SecondaryVotes
                 }
                 else if (PartySecondaryVotePercentage < 5) {
                     Party.FivePercentThreshold = false
                 }
             }
             let OthersVotePercentage = Number((((SecondaryVotesTotalPlusOthers - SecondaryVotesTotal)/SecondaryVotesTotalPlusOthers)*100).toFixed(1)) +"%"
-
 
 // 2.2 Estimation of parliament at norm size (130 seats)
 // 2.2.1 For each party calculate the rounded number of seats as well as the fraction remaining
@@ -513,10 +543,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     District.TotalSeatsHTML.innerHTML = District.SeatsWonDirectly + District.Districtlist
 // Edit the background color of district summary cells depending on result             
                     if (District.SeatsWonDirectly + District.Districtlist === 0) {
-                        District.TotalSeatsHTML.style.backgroundColor = "red"
+                            District.TotalSeatsHTML.style.backgroundColor = "red"
                     }
                     else if (District.SeatsWonDirectly + District.Districtlist > 0) {
-                        District.TotalSeatsHTML.style.backgroundColor = "green"
+                            District.TotalSeatsHTML.style.backgroundColor = "green"
                     }
                 }
                 SeatsWonDirectly_01_Total+= Party.Districtdata[0].SeatsWonDirectly
@@ -577,6 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
             LandlistSeats_Linke_HTML.innerHTML = Parties[3].ListSeats - Parties[3].Districtdata[0].Districtlist - Parties[3].Districtdata[1].Districtlist - Parties[3].Districtdata[2].Districtlist - Parties[3].Districtdata[3].Districtlist - Parties[3].Districtdata[4].Districtlist - Parties[3].Districtdata[5].Districtlist - Parties[3].Districtdata[6].Districtlist - Parties[3].Districtdata[7].Districtlist - Parties[3].Districtdata[8].Districtlist - Parties[3].Districtdata[9].Districtlist - Parties[3].Districtdata[10].Districtlist - Parties[3].Districtdata[11].Districtlist
             LandlistSeats_AfD_HTML.innerHTML = Parties[4].ListSeats - Parties[4].Districtdata[0].Districtlist - Parties[4].Districtdata[1].Districtlist - Parties[4].Districtdata[2].Districtlist - Parties[4].Districtdata[3].Districtlist - Parties[4].Districtdata[4].Districtlist - Parties[4].Districtdata[5].Districtlist - Parties[4].Districtdata[6].Districtlist - Parties[4].Districtdata[7].Districtlist - Parties[4].Districtdata[8].Districtlist - Parties[4].Districtdata[9].Districtlist - Parties[4].Districtdata[10].Districtlist - Parties[4].Districtdata[11].Districtlist
             LandlistSeats_FDP_HTML.innerHTML = Parties[5].ListSeats - Parties[5].Districtdata[0].Districtlist - Parties[5].Districtdata[1].Districtlist - Parties[5].Districtdata[2].Districtlist - Parties[5].Districtdata[3].Districtlist - Parties[5].Districtdata[4].Districtlist - Parties[5].Districtdata[5].Districtlist - Parties[5].Districtdata[6].Districtlist - Parties[5].Districtdata[7].Districtlist - Parties[5].Districtdata[8].Districtlist - Parties[5].Districtdata[9].Districtlist - Parties[5].Districtdata[10].Districtlist - Parties[5].Districtdata[11].Districtlist
+            LandlistSeats_Piraten_HTML.innerHTML = Parties[6].ListSeats - Parties[6].Districtdata[0].Districtlist - Parties[6].Districtdata[1].Districtlist - Parties[6].Districtdata[2].Districtlist - Parties[6].Districtdata[3].Districtlist - Parties[6].Districtdata[4].Districtlist - Parties[6].Districtdata[5].Districtlist - Parties[6].Districtdata[6].Districtlist - Parties[6].Districtdata[7].Districtlist - Parties[6].Districtdata[8].Districtlist - Parties[6].Districtdata[9].Districtlist - Parties[6].Districtdata[10].Districtlist - Parties[6].Districtdata[11].Districtlist
             LandlistSeats_Total_HTML.innerHTML = Parties[0].ListSeats + Parties[1].ListSeats + Parties[2].ListSeats + Parties[3].ListSeats + Parties[4].ListSeats + Parties[5].ListSeats
                     - Parties[0].Districtdata[0].Districtlist - Parties[0].Districtdata[1].Districtlist - Parties[0].Districtdata[2].Districtlist - Parties[0].Districtdata[3].Districtlist - Parties[0].Districtdata[4].Districtlist - Parties[0].Districtdata[5].Districtlist - Parties[0].Districtdata[6].Districtlist - Parties[0].Districtdata[7].Districtlist - Parties[0].Districtdata[8].Districtlist - Parties[0].Districtdata[9].Districtlist - Parties[0].Districtdata[10].Districtlist - Parties[0].Districtdata[11].Districtlist 
                     - Parties[1].Districtdata[0].Districtlist - Parties[1].Districtdata[1].Districtlist - Parties[1].Districtdata[2].Districtlist - Parties[1].Districtdata[3].Districtlist - Parties[1].Districtdata[4].Districtlist - Parties[1].Districtdata[5].Districtlist - Parties[1].Districtdata[6].Districtlist - Parties[1].Districtdata[7].Districtlist - Parties[1].Districtdata[8].Districtlist - Parties[1].Districtdata[9].Districtlist - Parties[1].Districtdata[10].Districtlist - Parties[1].Districtdata[11].Districtlist

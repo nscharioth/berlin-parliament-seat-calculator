@@ -1,5 +1,4 @@
 const data_2016 = {
-    SecondaryVotesTotal : 1485444,
     SecondaryVotesTotalPlusOthers : 1635169,
     Parties : [ 
         {Partyname: "SPD", SecondaryVotes : 352430, SeatsWonDirectly : 28, Districtdata: [
@@ -80,4 +79,17 @@ const data_2016 = {
             {DistrictNumber: "10", SecondaryVotes : 3411, SeatsWonDirectly : 0},
             {DistrictNumber: "11", SecondaryVotes : 3694, SeatsWonDirectly : 0},
             {DistrictNumber: "12", SecondaryVotes : 10502, SeatsWonDirectly : 0}]},
+        {Partyname: "Piraten", SecondaryVotes : 28332, SeatsWonDirectly : 0, Districtdata: [
+            {DistrictNumber: "01", SecondaryVotes : 2887, SeatsWonDirectly : 0},
+            {DistrictNumber: "02", SecondaryVotes : 3629, SeatsWonDirectly : 0},
+            {DistrictNumber: "03", SecondaryVotes : 3938, SeatsWonDirectly : 0},
+            {DistrictNumber: "04", SecondaryVotes : 2003, SeatsWonDirectly : 0},
+            {DistrictNumber: "05", SecondaryVotes : 1398, SeatsWonDirectly : 0},
+            {DistrictNumber: "06", SecondaryVotes : 2242, SeatsWonDirectly : 0},
+            {DistrictNumber: "07", SecondaryVotes : 2478, SeatsWonDirectly : 0},
+            {DistrictNumber: "08", SecondaryVotes : 2427, SeatsWonDirectly : 0},
+            {DistrictNumber: "09", SecondaryVotes : 2230, SeatsWonDirectly : 0},
+            {DistrictNumber: "10", SecondaryVotes : 1573, SeatsWonDirectly : 0},
+            {DistrictNumber: "11", SecondaryVotes : 2233, SeatsWonDirectly : 0},
+            {DistrictNumber: "12", SecondaryVotes : 1294, SeatsWonDirectly : 0}]},            
     ]}    

@@ -34,6 +34,11 @@
           <input type="radio" id="2016" name="year" class="year" value="2016"> 
           <label for="2016">2016</label><br>
         </th> 
+
+        <th class="top-bar"> 
+          <input type="radio" id="2011" name="year" class="year" value="2011"> 
+          <label for="2011">2011</label><br>
+        </th> 
         <th class="top-bar"></th>
         <th class="top-bar"></th>
         <th class="top-bar"></th>
@@ -45,9 +50,10 @@
         <th>SPD</th>
         <th>CDU</th>
         <th>B90/GRÜNE</th>
-        <th>LINKE</th>
+        <th>DIE LINKE</th>
         <th>AfD</th>
         <th>FDP</th>
+        <th>Piraten</th>
         <th>Sonstige</th>
         <th>Gesamt</th>
       </tr>      
@@ -89,6 +95,12 @@
         <input type="radio" id="fdp-districtlist" name="fdp-list" value="districtlist" checked="checked">
           <label for="fdp-districtlist">Bezirkslisten</label><br>
         </th>
+        <th class="line-solid-bottom">
+          <input type="radio" id="piraten-landlist" name="piraten-list" value="landlist" checked="checked"> 
+          <label for="piraten-landlist">Landesliste</label><br>
+        <input type="radio" id="piraten-districtlist" name="piraten-list" value="districtlist">
+          <label for="piraten-districtlist">Bezirkslisten</label><br>
+        </th>
         <th class="line-solid-bottom"></th>
         <th class="line-solid-right"></th>
       </tr>
@@ -100,6 +112,7 @@
         <td><span id="linke-secondary-vote-percentage"></span></td>
         <td><span id="afd-secondary-vote-percentage"></span></td>
         <td><span id="fdp-secondary-vote-percentage"></span></td>
+        <td><span id="piraten-secondary-vote-percentage"></span></td>
         <td><span id="others-secondary-vote-percentage"></span></td>
         <td>100%</td>
       </tr>
@@ -111,6 +124,7 @@
         <td class="line-bottom"><strong><span id="linke-seats-allocated2"></span></strong></td>
         <td class="line-bottom"><strong><span id="afd-seats-allocated2"></span></strong></td>
         <td class="line-bottom"><strong><span id="fdp-seats-allocated2"></span></strong></td>
+        <td class="line-bottom"><strong><span id="piraten-seats-allocated2"></span></strong></td>
         <td class="line-bottom"><strong>-</strong></td>
         <td class="line-right"><strong><span id="total-seats-allocated2"></span></strong></td>
       </tr>
@@ -122,6 +136,7 @@
         <td><span id="linke-seats-allocated"></span></td>
         <td><span id="afd-seats-allocated"></span></td>
         <td><span id="fdp-seats-allocated"></span></td>
+        <td><span id="piraten-seats-allocated"></span></td>
         <td>-</td>
         <td><span id="total-seats-allocated"></span></td>
       </tr>
@@ -133,6 +148,7 @@
         <td><span id="linke-overhang-seats"></span></td>
         <td><span id="afd-overhang-seats"></span></td>
         <td><span id="fdp-overhang-seats"></span></td>
+        <td><span id="piraten-overhang-seats"></span></td>
         <td>-</td>
         <td><span id="total-overhang-seats"></span></td>
       </tr>
@@ -144,6 +160,7 @@
         <td class="line-bottom"><span id="linke-compensation-seats"></span></td>
         <td class="line-bottom"><span id="afd-compensation-seats"></span></td>
         <td class="line-bottom"><span id="fdp-compensation-seats"></span></td>
+        <td class="line-bottom"><span id="piraten-compensation-seats"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-compensation-seats"></span></td>
       </tr> 
@@ -155,6 +172,7 @@
         <td><span id="linke-seats-won-directly"></span></td>
         <td><span id="afd-seats-won-directly"></span></td>
         <td><span id="fdp-seats-won-directly"></span></td>
+        <td><span id="piraten-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-seats-won-directly"></span></td>
       </tr> 
@@ -166,6 +184,7 @@
         <td class="line-solid-bottom"><span id="linke-list-seats"></span></td>
         <td class="line-solid-bottom"><span id="afd-list-seats"></span></td>
         <td class="line-solid-bottom"><span id="fdp-list-seats"></span></td>
+        <td class="line-solid-bottom"><span id="piraten-list-seats"></span></td>
         <td class="line-solid-bottom">-</td>
         <td class="line-solid-right"><span id="total-list-seats"></span></td>
       </tr>
@@ -183,6 +202,7 @@
         <td><span id="linke-01-seats-won-directly"></span></td>
         <td><span id="afd-01-seats-won-directly"></span></td>
         <td><span id="fdp-01-seats-won-directly"></span></td>
+        <td><span id="piraten-01-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-01-seats-won-directly"></span></td>
       </tr> 
@@ -194,6 +214,7 @@
         <td><span id="linke-01-list-seats"></span></td>
         <td><span id="afd-01-list-seats"></span></td>
         <td><span id="fdp-01-list-seats"></span></td>
+        <td><span id="piraten-01-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-01-list-seats"></span></td>
       </tr> 
@@ -205,6 +226,7 @@
         <td class="line-bottom"><span id="linke-01-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-01-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-01-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-01-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-01-total-seats"></span></td>
       </tr>
@@ -218,6 +240,7 @@
         <td><span id="linke-02-seats-won-directly"></span></td>
         <td><span id="afd-02-seats-won-directly"></span></td>
         <td><span id="fdp-02-seats-won-directly"></span></td>
+        <td><span id="piraten-02-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-02-seats-won-directly"></span></td>
       </tr> 
@@ -229,6 +252,7 @@
         <td><span id="linke-02-list-seats"></span></td>
         <td><span id="afd-02-list-seats"></span></td>
         <td><span id="fdp-02-list-seats"></span></td>
+        <td><span id="piraten-02-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-02-list-seats"></span></td>
       </tr> 
@@ -240,6 +264,7 @@
         <td class="line-bottom"><span id="linke-02-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-02-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-02-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-02-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-02-total-seats"></span></td>
       </tr>
@@ -254,6 +279,7 @@
         <td><span id="linke-03-seats-won-directly"></span></td>
         <td><span id="afd-03-seats-won-directly"></span></td>
         <td><span id="fdp-03-seats-won-directly"></span></td>
+        <td><span id="piraten-03-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-03-seats-won-directly"></span></td>
       </tr> 
@@ -265,6 +291,7 @@
         <td><span id="linke-03-list-seats"></span></td>
         <td><span id="afd-03-list-seats"></span></td>
         <td><span id="fdp-03-list-seats"></span></td>
+        <td><span id="piraten-03-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-03-list-seats"></span></td>
       </tr> 
@@ -276,6 +303,7 @@
         <td class="line-bottom"><span id="linke-03-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-03-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-03-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-03-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-03-total-seats"></span></td>
       </tr>     
@@ -290,6 +318,7 @@
         <td><span id="linke-04-seats-won-directly"></span></td>
         <td><span id="afd-04-seats-won-directly"></span></td>
         <td><span id="fdp-04-seats-won-directly"></span></td>
+        <td><span id="piraten-04-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-04-seats-won-directly"></span></td>
       </tr> 
@@ -301,6 +330,7 @@
         <td><span id="linke-04-list-seats"></span></td>
         <td><span id="afd-04-list-seats"></span></td>
         <td><span id="fdp-04-list-seats"></span></td>
+        <td><span id="piraten-04-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-04-list-seats"></span></td>
       </tr> 
@@ -312,6 +342,7 @@
         <td class="line-bottom"><span id="linke-04-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-04-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-04-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-04-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-04-total-seats"></span></td>
       </tr> 
@@ -326,6 +357,7 @@
         <td><span id="linke-05-seats-won-directly"></span></td>
         <td><span id="afd-05-seats-won-directly"></span></td>
         <td><span id="fdp-05-seats-won-directly"></span></td>
+        <td><span id="piraten-05-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-05-seats-won-directly"></span></td>
       </tr> 
@@ -337,6 +369,7 @@
         <td><span id="linke-05-list-seats"></span></td>
         <td><span id="afd-05-list-seats"></span></td>
         <td><span id="fdp-05-list-seats"></span></td>
+        <td><span id="piraten-05-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-05-list-seats"></span></td>
       </tr> 
@@ -348,6 +381,7 @@
         <td class="line-bottom"><span id="linke-05-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-05-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-05-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-05-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-05-total-seats" class="analysis"></span></td>
       </tr> 
@@ -362,6 +396,7 @@
         <td><span id="linke-06-seats-won-directly"></span></td>
         <td><span id="afd-06-seats-won-directly"></span></td>
         <td><span id="fdp-06-seats-won-directly"></span></td>
+        <td><span id="piraten-06-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-06-seats-won-directly"></span></td>
       </tr> 
@@ -373,6 +408,7 @@
         <td><span id="linke-06-list-seats"></span></td>
         <td><span id="afd-06-list-seats"></span></td>
         <td><span id="fdp-06-list-seats"></span></td>
+        <td><span id="piraten-06-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-06-list-seats"></span></td>
       </tr> 
@@ -384,6 +420,7 @@
         <td class="line-bottom"><span id="linke-06-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-06-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-06-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-06-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-06-total-seats"></span></td>
       </tr>   
@@ -398,6 +435,7 @@
         <td><span id="linke-07-seats-won-directly"></span></td>
         <td><span id="afd-07-seats-won-directly"></span></td>
         <td><span id="fdp-07-seats-won-directly"></span></td>
+        <td><span id="piraten-07-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-07-seats-won-directly"></span></td>
       </tr> 
@@ -409,6 +447,7 @@
         <td><span id="linke-07-list-seats"></span></td>
         <td><span id="afd-07-list-seats"></span></td>
         <td><span id="fdp-07-list-seats"></span></td>
+        <td><span id="piraten-07-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-07-list-seats"></span></td>
       </tr> 
@@ -420,6 +459,7 @@
         <td class="line-bottom"><span id="linke-07-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-07-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-07-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-07-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-07-total-seats"></span></td>
       </tr>
@@ -434,6 +474,7 @@
         <td><span id="linke-08-seats-won-directly"></span></td>
         <td><span id="afd-08-seats-won-directly"></span></td>
         <td><span id="fdp-08-seats-won-directly"></span></td>
+        <td><span id="piraten-08-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-08-seats-won-directly"></span></td>
       </tr> 
@@ -445,6 +486,7 @@
         <td><span id="linke-08-list-seats"></span></td>
         <td><span id="afd-08-list-seats"></span></td>
         <td><span id="fdp-08-list-seats"></span></td>
+        <td><span id="piraten-08-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-08-list-seats"></span></td>
       </tr> 
@@ -456,6 +498,7 @@
         <td class="line-bottom"><span id="linke-08-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-08-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-08-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-08-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-08-total-seats"></span></td>
       </tr>
@@ -470,6 +513,7 @@
         <td><span id="linke-09-seats-won-directly"></span></td>
         <td><span id="afd-09-seats-won-directly"></span></td>
         <td><span id="fdp-09-seats-won-directly"></span></td>
+        <td><span id="piraten-09-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-09-seats-won-directly"></span></td>
       </tr> 
@@ -481,6 +525,7 @@
         <td><span id="linke-09-list-seats"></span></td>
         <td><span id="afd-09-list-seats"></span></td>
         <td><span id="fdp-09-list-seats"></span></td>
+        <td><span id="piraten-09-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-09-list-seats"></span></td>
       </tr> 
@@ -492,6 +537,7 @@
         <td class="line-bottom"><span id="linke-09-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-09-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-09-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-09-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-09-total-seats"></span></td>
       </tr>
@@ -506,6 +552,7 @@
         <td><span id="linke-10-seats-won-directly"></span></td>
         <td><span id="afd-10-seats-won-directly"></span></td>
         <td><span id="fdp-10-seats-won-directly"></span></td>
+        <td><span id="piraten-10-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-10-seats-won-directly"></span></td>
       </tr> 
@@ -517,6 +564,7 @@
         <td><span id="linke-10-list-seats"></span></td>
         <td><span id="afd-10-list-seats"></span></td>
         <td><span id="fdp-10-list-seats"></span></td>
+        <td><span id="piraten-10-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-10-list-seats"></span></td>
       </tr> 
@@ -528,6 +576,7 @@
         <td class="line-bottom"><span id="linke-10-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-10-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-10-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-10-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-10-total-seats"></span></td>
       </tr>
@@ -542,6 +591,7 @@
         <td><span id="linke-11-seats-won-directly"></span></td>
         <td><span id="afd-11-seats-won-directly"></span></td>
         <td><span id="fdp-11-seats-won-directly"></span></td>
+        <td><span id="piraten-11-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-11-seats-won-directly"></span></td>
       </tr> 
@@ -553,6 +603,7 @@
         <td><span id="linke-11-list-seats"></span></td>
         <td><span id="afd-11-list-seats"></span></td>
         <td><span id="fdp-11-list-seats"></span></td>
+        <td><span id="piraten-11-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-11-list-seats"></span></td>
       </tr> 
@@ -564,6 +615,7 @@
         <td class="line-bottom"><span id="linke-11-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-11-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-11-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-11-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-11-total-seats"></span></td>
       </tr>
@@ -578,6 +630,7 @@
         <td><span id="linke-12-seats-won-directly"></span></td>
         <td><span id="afd-12-seats-won-directly"></span></td>
         <td><span id="fdp-12-seats-won-directly"></span></td>
+        <td><span id="piraten-12-seats-won-directly"></span></td>
         <td>-</td>
         <td><span id="total-12-seats-won-directly"></span></td>
       </tr> 
@@ -589,6 +642,7 @@
         <td><span id="linke-12-list-seats"></span></td>
         <td><span id="afd-12-list-seats"></span></td>
         <td><span id="fdp-12-list-seats"></span></td>
+        <td><span id="piraten-12-list-seats"></span></td>
         <td>-</td>
         <td><span id="total-12-list-seats"></span></td>
       </tr> 
@@ -600,6 +654,7 @@
         <td class="line-bottom"><span id="linke-12-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="afd-12-total-seats" class="analysis"></span></td>
         <td class="line-bottom"><span id="fdp-12-total-seats" class="analysis"></span></td>
+        <td class="line-bottom"><span id="piraten-12-total-seats" class="analysis"></span></td>
         <td class="line-bottom">-</td>
         <td class="line-right"><span id="total-12-total-seats"></span></td>
       </tr>                                         
@@ -611,12 +666,14 @@
         <td><span id="linke-landlist-seats"></span></td>
         <td><span id="afd-landlist-seats"></span></td>
         <td><span id="fdp-landlist-seats"></span></td>
+        <td><span id="piraten-landlist-seats"></span></td>
         <td>-</td>
         <td><span id="total-landlist-seats"></span></td>
       </tr> 
     </div>  
     </table> 
-    
+
+    <script type="text/javascript" src="./data_2011.js"></script>
     <script type="text/javascript" src="./data_2016.js"></script>
     <script type="text/javascript" src="./data_2021.js"></script>
 <!--    <script type="text/javascript" src="./data_2023.js"></script> -->  
