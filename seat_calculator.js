@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 0.3 Set-up of the party array with initial 0 values for later use as well as set up HTML connections          
             let Parties = [
-                {Partyname: "SPD", Districtlist: spd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("spd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("spd-seats-won-directly")), ListSeatsHTML: (document.getElementById("spd-list-seats")), SeatsAllocatedHTML: (document.getElementById("spd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("spd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("spd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("spd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+                {Partyname: "SPD", FivePercentThreshold: true, Districtlist: spd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("spd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("spd-seats-won-directly")), ListSeatsHTML: (document.getElementById("spd-list-seats")), SeatsAllocatedHTML: (document.getElementById("spd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("spd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("spd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("spd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
                 Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("spd-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("spd-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-02-total-seats"))},
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("spd-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("spd-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-12-total-seats"))},
                     ],},
-            {Partyname: "CDU", Districtlist: cdu_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("cdu-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("cdu-seats-won-directly")), ListSeatsHTML: (document.getElementById("cdu-list-seats")), SeatsAllocatedHTML: (document.getElementById("cdu-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("cdu-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("cdu-compensation-seats")), OverhangSeatsHTML: (document.getElementById("cdu-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "CDU", FivePercentThreshold: true, Districtlist: cdu_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("cdu-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("cdu-seats-won-directly")), ListSeatsHTML: (document.getElementById("cdu-list-seats")), SeatsAllocatedHTML: (document.getElementById("cdu-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("cdu-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("cdu-compensation-seats")), OverhangSeatsHTML: (document.getElementById("cdu-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("cdu-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("cdu-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-02-total-seats"))},
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("cdu-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("cdu-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-12-total-seats"))},
                 ], },
-            {Partyname: "Grüne", Districtlist: gruene_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("gruene-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("gruene-seats-won-directly")), ListSeatsHTML: (document.getElementById("gruene-list-seats")), SeatsAllocatedHTML: (document.getElementById("gruene-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("gruene-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("gruene-compensation-seats")), OverhangSeatsHTML: (document.getElementById("gruene-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "Grüne", FivePercentThreshold: true, Districtlist: gruene_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("gruene-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("gruene-seats-won-directly")), ListSeatsHTML: (document.getElementById("gruene-list-seats")), SeatsAllocatedHTML: (document.getElementById("gruene-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("gruene-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("gruene-compensation-seats")), OverhangSeatsHTML: (document.getElementById("gruene-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("gruene-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("gruene-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-02-total-seats"))},
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("gruene-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("gruene-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-12-total-seats"))},
                 ], },
-            {Partyname: "Linke", Districtlist: linke_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("linke-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("linke-seats-won-directly")), ListSeatsHTML: (document.getElementById("linke-list-seats")), SeatsAllocatedHTML: (document.getElementById("linke-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("linke-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("linke-compensation-seats")), OverhangSeatsHTML: (document.getElementById("linke-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "Linke", FivePercentThreshold: true, Districtlist: linke_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("linke-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("linke-seats-won-directly")), ListSeatsHTML: (document.getElementById("linke-list-seats")), SeatsAllocatedHTML: (document.getElementById("linke-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("linke-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("linke-compensation-seats")), OverhangSeatsHTML: (document.getElementById("linke-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("linke-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("linke-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-02-total-seats"))},
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("linke-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("linke-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-12-total-seats"))},
                 ], },
-            {Partyname: "AfD", Districtlist: afd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("afd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("afd-seats-won-directly")), ListSeatsHTML: (document.getElementById("afd-list-seats")), SeatsAllocatedHTML: (document.getElementById("afd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("afd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("afd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("afd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "AfD", FivePercentThreshold: true, Districtlist: afd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("afd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("afd-seats-won-directly")), ListSeatsHTML: (document.getElementById("afd-list-seats")), SeatsAllocatedHTML: (document.getElementById("afd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("afd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("afd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("afd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("afd-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("afd-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-02-total-seats"))},
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("afd-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("afd-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-12-total-seats"))},
             ], },
-            {Partyname: "FDP", Districtlist: fdp_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("fdp-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("fdp-seats-won-directly")), ListSeatsHTML: (document.getElementById("fdp-list-seats")), SeatsAllocatedHTML: (document.getElementById("fdp-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("fdp-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("fdp-compensation-seats")), OverhangSeatsHTML: (document.getElementById("fdp-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "FDP", FivePercentThreshold: true, Districtlist: fdp_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("fdp-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("fdp-seats-won-directly")), ListSeatsHTML: (document.getElementById("fdp-list-seats")), SeatsAllocatedHTML: (document.getElementById("fdp-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("fdp-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("fdp-compensation-seats")), OverhangSeatsHTML: (document.getElementById("fdp-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("fdp-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("fdp-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-02-total-seats"))},
@@ -299,11 +299,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 // 1.4 Same as 1.3 but for 1.2            
-            function calcAllocatedSeatNumberFractionDirect (SecondaryVotes, ParlSize, SecondaryVotesTotal, VotesDirect) {
+            function calcAllocatedSeatNumberFractionDirect (SecondaryVotes, ParlSize, SecondaryVotesTotal, SeatsWonDirectly) {
                 let SeatsEstimate = SecondaryVotes * ParlSize / SecondaryVotesTotal
                 let SeatsAllocated = Math.floor(SeatsEstimate)
-                if (SeatsAllocated < VotesDirect) {
-                    SeatsAllocated = VotesDirect
+                if (SeatsAllocated < SeatsWonDirectly) {
+                    SeatsAllocated = SeatsWonDirectly
                 }
                 let AllocatedSeatNumberFraction = SeatsEstimate - SeatsAllocated
                 return AllocatedSeatNumberFraction
@@ -326,58 +326,89 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 // 2 Code to calculate the number of seats per party
-// 2.1 Estimation of parliament at norm size (130 seats)
-// 2.1.1 For each party calculate the rounded number of seats as well as the fraction remaining
+// 2.1 Calculate voting percentages and check 5 percent electoral threshold
             for (let Party of Parties) {
-                let SeatsAllocated = calcSeatsAllocated (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal)
-                Party.SeatsAllocated = SeatsAllocated
-                SeatsEstimatesTotal+= SeatsAllocated
-                let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFraction (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal)
-                Party.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
-                SortingArray1.push(AllocatedSeatNumberFraction)
+                let PartySecondaryVotePercentage = Number(((Party.SecondaryVotes / SecondaryVotesTotalPlusOthers) * 100).toFixed(1))
+                Party.SecondaryVotePercentage = PartySecondaryVotePercentage + "%"
+                if (PartySecondaryVotePercentage >= 5) {
+                    Party.FivePercentThreshold = true
+                }
+                else if (PartySecondaryVotePercentage < 5) {
+                    Party.FivePercentThreshold = false
+                }
             }
+            let OthersVotePercentage = Number((((SecondaryVotesTotalPlusOthers - SecondaryVotesTotal)/SecondaryVotesTotalPlusOthers)*100).toFixed(1)) +"%"
 
-// 2.1.2 Sort the array of fractions and keep the number of highest frations equal to the number of unallocated seats           
-            SortingArray2 = calcArraySort(SortingArray1, ParliamentNormSize,  SeatsEstimatesTotal)
-            SeatsEstimatesTotal = 0
 
-// 2.1.3 Allocate the unallocated seats to the parties with the highest fractions
+// 2.2 Estimation of parliament at norm size (130 seats)
+// 2.2.1 For each party calculate the rounded number of seats as well as the fraction remaining
             for (let Party of Parties) {
-                let SeatsAllocated = calcArrayCheck(SortingArray2, Party.AllocatedSeatNumberFraction, Party.SeatsAllocated)
-                Party.SeatsAllocated = SeatsAllocated
-                SeatsEstimatesTotal+= SeatsAllocated
-
-// 2.1.4 Similarly, in each district calculate the number of district seats for each party with a district list              
-                if (Party.Districtlist) {
-                    for (let District of Party.Districtdata) {
-                        let SeatsAllocated = calcSeatsAllocated (District.SecondaryVotes, Party.SeatsAllocated, Party.SecondaryVotes)
-                        District.SeatsAllocated = SeatsAllocated
-                        Party.DistrictSeatsEstimatesTotal+= SeatsAllocated
-                        let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFraction (District.SecondaryVotes, Party.SeatsAllocated, Party.SecondaryVotes)
-                        District.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
-                        Party.Array1.push(AllocatedSeatNumberFraction)
-                    }
-
-                    Party.Array2 = calcArraySort(Party.Array1, Party.SeatsAllocated, Party.DistrictSeatsEstimatesTotal)
-
-// 2.1.5 Assign the number of district seats, taking into account possible overhang seats                    
-                    for (let District of Party.Districtdata) {
-                        let SeatsAllocated = calcArrayCheck(Party.Array2, District.AllocatedSeatNumberFraction, District.SeatsAllocated)
-                        District.SeatsAllocated = SeatsAllocated
-                        let OverhangSeats = 0
-                            if (District.SeatsWonDirectly > District.SeatsAllocated) {
-                                OverhangSeats = District.SeatsWonDirectly - District.SeatsAllocated
-                            }
-                        District.OverhangSeats = OverhangSeats
-                        Party.OverhangSeats+= OverhangSeats
-                        OverhangSeatsTotal+= OverhangSeats
-                    }
+                if (Party.FivePercentThreshold === false) {
+                    let SeatsAllocated = Party.SeatsWonDirectly
+                    Party.SeatsAllocated = SeatsAllocated
+                    SeatsEstimatesTotal+= SeatsAllocated
+                    let AllocatedSeatNumberFraction = 0
+                    Party.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
+                    SortingArray1.push(AllocatedSeatNumberFraction)
+                }
+                else if (Party.FivePercentThreshold === true) {
+                    let SeatsAllocated = calcSeatsAllocatedDirect (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal, Party.SeatsWonDirectly)
+                    Party.SeatsAllocated = SeatsAllocated
+                    SeatsEstimatesTotal+= SeatsAllocated
+                    let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFractionDirect (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal, Party.SeatsWonDirectly)
+                    Party.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
+                    SortingArray1.push(AllocatedSeatNumberFraction)
                 }
             }
 
-// 2.2 Estimation of parliament size for each party with district lists given the number of overhang seats, maximum equals new parliament size
+// 2.2.2 Sort the array of fractions and keep the number of highest frations equal to the number of unallocated seats           
+            SortingArray2 = calcArraySort(SortingArray1, ParliamentNormSize, SeatsEstimatesTotal)
+            SeatsEstimatesTotal = 0
+
+// 2.2.3 Allocate the unallocated seats to the parties with the highest fractions
             for (let Party of Parties) {
-                if (Party.Districtlist) {
+                if (Party.FivePercentThreshold === false) {
+                    let SeatsAllocated = Party.SeatsWonDirectly
+                    Party.SeatsAllocated = SeatsAllocated
+                    SeatsEstimatesTotal+= SeatsAllocated
+                }
+                else if (Party.FivePercentThreshold === true) {
+                    let SeatsAllocated = calcArrayCheck(SortingArray2, Party.AllocatedSeatNumberFraction, Party.SeatsAllocated)
+                    Party.SeatsAllocated = SeatsAllocated
+                    SeatsEstimatesTotal+= SeatsAllocated
+
+// 2.2.4 Similarly, in each district calculate the number of district seats for each party with a district list              
+                    if (Party.Districtlist) {
+                        for (let District of Party.Districtdata) {
+                            let SeatsAllocated = calcSeatsAllocated (District.SecondaryVotes, Party.SeatsAllocated, Party.SecondaryVotes)
+                            District.SeatsAllocated = SeatsAllocated
+                            Party.DistrictSeatsEstimatesTotal+= SeatsAllocated
+                            let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFraction (District.SecondaryVotes, Party.SeatsAllocated, Party.SecondaryVotes)
+                            District.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
+                            Party.Array1.push(AllocatedSeatNumberFraction)
+                        }
+
+                        Party.Array2 = calcArraySort(Party.Array1, Party.SeatsAllocated, Party.DistrictSeatsEstimatesTotal)
+
+// 2.2.5 Assign the number of district seats, taking into account possible overhang seats                    
+                        for (let District of Party.Districtdata) {
+                            let SeatsAllocated = calcArrayCheck(Party.Array2, District.AllocatedSeatNumberFraction, District.SeatsAllocated)
+                            District.SeatsAllocated = SeatsAllocated
+                            let OverhangSeats = 0
+                                if (District.SeatsWonDirectly > District.SeatsAllocated) {
+                                    OverhangSeats = District.SeatsWonDirectly - District.SeatsAllocated
+                                }
+                            District.OverhangSeats = OverhangSeats
+                            Party.OverhangSeats+= OverhangSeats
+                            OverhangSeatsTotal+= OverhangSeats    
+                        }
+                    }        
+                }
+            }
+
+// 2.3 Estimation of parliament size for each party with district lists given the number of overhang seats, maximum equals new parliament size
+            for (let Party of Parties) {
+                if (Party.FivePercentThreshold && ((Party.SeatsWonDirectly >= Party.SeatsAllocated) || Party.Districtlist)) {
                     let PartySeats = Party.SeatsAllocated + Party.OverhangSeats
                     let ParlSizeEstimateUnrounded = PartySeats * SecondaryVotesTotal / Party.SecondaryVotes
                     let ParliamentSizeEstimate = Math.round(ParlSizeEstimateUnrounded)
@@ -387,64 +418,80 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             ParliamentSize = ParliamentSize.sort().reverse()[0]
 
-// 2.3 Redo step 2.1 for the new parliament size and estimate possible compensation seats for each party
+// 2.4 Redo step 2.2 for the new parliament size and estimate possible compensation seats for each party
             for (let Party of Parties) {
-                let SeatsAllocated2 = calcSeatsAllocated (Party.SecondaryVotes, ParliamentSize, SecondaryVotesTotal)
-                Party.SeatsAllocated2 = SeatsAllocated2
-                SeatsEstimatesTotal2+= SeatsAllocated2
-                let AllocatedSeatNumberFraction2 = calcAllocatedSeatNumberFraction (Party.SecondaryVotes, ParliamentSize, SecondaryVotesTotal)
-                Party.AllocatedSeatNumberFraction2 = AllocatedSeatNumberFraction2
-                SortingArray3.push(AllocatedSeatNumberFraction2)
+                if (Party.FivePercentThreshold === false) {
+                    let SeatsAllocated2 = Party.SeatsWonDirectly
+                    Party.SeatsAllocated2 = SeatsAllocated2
+                    SeatsEstimatesTotal2+= SeatsAllocated2
+                    let AllocatedSeatNumberFraction2 = 0
+                    Party.AllocatedSeatNumberFraction2 = AllocatedSeatNumberFraction2
+                    SortingArray3.push(AllocatedSeatNumberFraction2)
+                }
+                else if (Party.FivePercentThreshold === true) {
+                    let SeatsAllocated2 = calcSeatsAllocated (Party.SecondaryVotes, ParliamentSize, SecondaryVotesTotal)
+                    Party.SeatsAllocated2 = SeatsAllocated2
+                    SeatsEstimatesTotal2+= SeatsAllocated2
+                    let AllocatedSeatNumberFraction2 = calcAllocatedSeatNumberFraction (Party.SecondaryVotes, ParliamentSize, SecondaryVotesTotal)
+                    Party.AllocatedSeatNumberFraction2 = AllocatedSeatNumberFraction2
+                    SortingArray3.push(AllocatedSeatNumberFraction2)
+                }
             }
 
-            SortingArray4 = calcArraySort(SortingArray3, ParliamentSize,  SeatsEstimatesTotal2)
+            SortingArray4 = calcArraySort(SortingArray3, ParliamentSize, SeatsEstimatesTotal2)
             SeatsEstimatesTotal2 = 0
 
             for (let Party of Parties) {
-                let SeatsAllocated2 = calcArrayCheck(SortingArray4, Party.AllocatedSeatNumberFraction2, Party.SeatsAllocated2)
-                Party.SeatsAllocated2 = SeatsAllocated2
-                SeatsEstimatesTotal2+= SeatsAllocated2
-                let CompensationSeats = Party.SeatsAllocated2 - Party.SeatsAllocated - Party.OverhangSeats
-                Party.CompensationSeats = CompensationSeats
-                CompensationSeatsTotal+= CompensationSeats
-                let ListSeats = Party.SeatsAllocated2 - Party.SeatsWonDirectly
-                Party.ListSeats = ListSeats
-                ListSeatsTotal+= ListSeats
-                let SeatsWonDirectly = Party.SeatsWonDirectly
-                SeatsWonDirectlyTotal+= SeatsWonDirectly
-
-
-                if (Party.Districtlist) {
-                    for (let District of Party.Districtdata) {
-                        let SeatsAllocated = calcSeatsAllocatedDirect (District.SecondaryVotes, Party.SeatsAllocated2, Party.SecondaryVotes, District.SeatsWonDirectly)
-                        District.SeatsAllocated = SeatsAllocated
-                        Party.DistrictSeatsEstimatesTotal2+= SeatsAllocated
-                        let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFractionDirect (District.SecondaryVotes, Party.SeatsAllocated2, Party.SecondaryVotes, District.SeatsWonDirectly)
-                        District.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
-                        Party.Array3.push(AllocatedSeatNumberFraction)
-                    }
-
-                    Party.Array4 = calcArraySort(Party.Array3, Party.SeatsAllocated2, Party.DistrictSeatsEstimatesTotal2)
-
-                    for (let District of Party.Districtdata) {
-                        let SeatsAllocated = calcArrayCheck(Party.Array4, District.AllocatedSeatNumberFraction, District.SeatsAllocated)
-                        District.SeatsAllocated = SeatsAllocated
-                        let Districtlist = SeatsAllocated - District.SeatsWonDirectly
-                        District.Districtlist = Districtlist
-                    }
+                if (Party.FivePercentThreshold === false) {
+                    let SeatsAllocated2 = Party.SeatsWonDirectly
+                    Party.SeatsAllocated2 = SeatsAllocated2
+                    SeatsEstimatesTotal2+= SeatsAllocated2
+                    let CompensationSeats = 0
+                    Party.CompensationSeats = CompensationSeats
+                    let ListSeats = 0
+                    Party.ListSeats = ListSeats
+                    let SeatsWonDirectly = Party.SeatsWonDirectly
+                    SeatsWonDirectlyTotal+= SeatsWonDirectly
                 }
+                else if (Party.FivePercentThreshold === true) {
+                    let SeatsAllocated2 = calcArrayCheck(SortingArray4, Party.AllocatedSeatNumberFraction2, Party.SeatsAllocated2)
+                    Party.SeatsAllocated2 = SeatsAllocated2
+                    SeatsEstimatesTotal2+= SeatsAllocated2
+                    let CompensationSeats = Party.SeatsAllocated2 - Party.SeatsAllocated - Party.OverhangSeats
+                    Party.CompensationSeats = CompensationSeats
+                    CompensationSeatsTotal+= CompensationSeats
+                    let ListSeats = Party.SeatsAllocated2 - Party.SeatsWonDirectly
+                    Party.ListSeats = ListSeats
+                    ListSeatsTotal+= ListSeats
+                    let SeatsWonDirectly = Party.SeatsWonDirectly
+                    SeatsWonDirectlyTotal+= SeatsWonDirectly
+
+
+                    if (Party.Districtlist) {
+                        for (let District of Party.Districtdata) {
+                            let SeatsAllocated = calcSeatsAllocatedDirect (District.SecondaryVotes, Party.SeatsAllocated2, Party.SecondaryVotes, District.SeatsWonDirectly)
+                            District.SeatsAllocated = SeatsAllocated
+                            Party.DistrictSeatsEstimatesTotal2+= SeatsAllocated
+                            let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFractionDirect (District.SecondaryVotes, Party.SeatsAllocated2, Party.SecondaryVotes, District.SeatsWonDirectly)
+                            District.AllocatedSeatNumberFraction = AllocatedSeatNumberFraction
+                            Party.Array3.push(AllocatedSeatNumberFraction)
+                        }
+
+                        Party.Array4 = calcArraySort(Party.Array3, Party.SeatsAllocated2, Party.DistrictSeatsEstimatesTotal2)
+
+                        for (let District of Party.Districtdata) {
+                            let SeatsAllocated = calcArrayCheck(Party.Array4, District.AllocatedSeatNumberFraction, District.SeatsAllocated)
+                            District.SeatsAllocated = SeatsAllocated
+                            let Districtlist = SeatsAllocated - District.SeatsWonDirectly
+                            District.Districtlist = Districtlist
+                        }
+                    }
+                }    
             }    
-
-// 2.4 Calculate voting percentages
-            for (let Party of Parties) {
-            let PartySecondaryVotePercentage = Number(((Party.SecondaryVotes / SecondaryVotesTotalPlusOthers) * 100).toFixed(1))
-            Party.SecondaryVotePercentage = PartySecondaryVotePercentage + "%"
-                }
-            let OthersVotePercentage = Number((((SecondaryVotesTotalPlusOthers - SecondaryVotesTotal)/SecondaryVotesTotalPlusOthers)*100).toFixed(1)) +"%"
 
 // 3 Assign output variables for HTML document       
             OthersSecondaryVotePercentage_HTML.innerHTML = OthersVotePercentage
-            SeatsAllocated_HTML.innerHTML = ParliamentNormSize
+            SeatsAllocated_HTML.innerHTML = SeatsEstimatesTotal
             SeatsAllocated2_HTML.innerHTML = ParliamentSize
             SeatsWonDirectly_HTML.innerHTML = SeatsWonDirectlyTotal
             OverhangSeats_HTML.innerHTML = OverhangSeatsTotal
