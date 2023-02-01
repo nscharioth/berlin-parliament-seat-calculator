@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 0.3 Set-up of the party array with initial 0 values for later use as well as set up HTML connections          
             let Parties = [
-                {Partyname: "SPD", FivePercentThreshold: true, Districtlist: spd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("spd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("spd-seats-won-directly")), ListSeatsHTML: (document.getElementById("spd-list-seats")), SeatsAllocatedHTML: (document.getElementById("spd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("spd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("spd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("spd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+                {Partyname: "SPD", FivePercentThreshold: true, Districtlist: spd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("spd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("spd-seats-won-directly")), ListSeatsHTML: (document.getElementById("spd-list-seats")), SeatsAllocatedHTML: (document.getElementById("spd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("spd-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("spd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("spd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
                 Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("spd-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("spd-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-02-total-seats"))},
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("spd-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("spd-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("spd-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("spd-12-total-seats"))},
                     ],},
-            {Partyname: "CDU", FivePercentThreshold: true, Districtlist: cdu_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("cdu-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("cdu-seats-won-directly")), ListSeatsHTML: (document.getElementById("cdu-list-seats")), SeatsAllocatedHTML: (document.getElementById("cdu-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("cdu-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("cdu-compensation-seats")), OverhangSeatsHTML: (document.getElementById("cdu-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "CDU", FivePercentThreshold: true, Districtlist: cdu_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("cdu-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("cdu-seats-won-directly")), ListSeatsHTML: (document.getElementById("cdu-list-seats")), SeatsAllocatedHTML: (document.getElementById("cdu-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("cdu-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("cdu-compensation-seats")), OverhangSeatsHTML: (document.getElementById("cdu-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("cdu-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("cdu-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-02-total-seats"))},
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("cdu-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("cdu-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("cdu-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("cdu-12-total-seats"))},
                 ], },
-            {Partyname: "Grüne", FivePercentThreshold: true, Districtlist: gruene_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("gruene-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("gruene-seats-won-directly")), ListSeatsHTML: (document.getElementById("gruene-list-seats")), SeatsAllocatedHTML: (document.getElementById("gruene-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("gruene-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("gruene-compensation-seats")), OverhangSeatsHTML: (document.getElementById("gruene-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "Grüne", FivePercentThreshold: true, Districtlist: gruene_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("gruene-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("gruene-seats-won-directly")), ListSeatsHTML: (document.getElementById("gruene-list-seats")), SeatsAllocatedHTML: (document.getElementById("gruene-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("gruene-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("gruene-compensation-seats")), OverhangSeatsHTML: (document.getElementById("gruene-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("gruene-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("gruene-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-02-total-seats"))},
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("gruene-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("gruene-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("gruene-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("gruene-12-total-seats"))},
                 ], },
-            {Partyname: "Linke", FivePercentThreshold: true, Districtlist: linke_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("linke-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("linke-seats-won-directly")), ListSeatsHTML: (document.getElementById("linke-list-seats")), SeatsAllocatedHTML: (document.getElementById("linke-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("linke-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("linke-compensation-seats")), OverhangSeatsHTML: (document.getElementById("linke-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "Linke", FivePercentThreshold: true, Districtlist: linke_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("linke-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("linke-seats-won-directly")), ListSeatsHTML: (document.getElementById("linke-list-seats")), SeatsAllocatedHTML: (document.getElementById("linke-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("linke-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("linke-compensation-seats")), OverhangSeatsHTML: (document.getElementById("linke-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("linke-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("linke-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-02-total-seats"))},
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("linke-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("linke-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("linke-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("linke-12-total-seats"))},
                 ], },
-            {Partyname: "AfD", FivePercentThreshold: true, Districtlist: afd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("afd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("afd-seats-won-directly")), ListSeatsHTML: (document.getElementById("afd-list-seats")), SeatsAllocatedHTML: (document.getElementById("afd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("afd-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("afd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("afd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "AfD", FivePercentThreshold: true, Districtlist: afd_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("afd-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("afd-seats-won-directly")), ListSeatsHTML: (document.getElementById("afd-list-seats")), SeatsAllocatedHTML: (document.getElementById("afd-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("afd-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("afd-compensation-seats")), OverhangSeatsHTML: (document.getElementById("afd-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("afd-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("afd-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-02-total-seats"))},
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("afd-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("afd-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("afd-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("afd-12-total-seats"))},
             ], },
-            {Partyname: "FDP", FivePercentThreshold: true, Districtlist: fdp_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("fdp-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("fdp-seats-won-directly")), ListSeatsHTML: (document.getElementById("fdp-list-seats")), SeatsAllocatedHTML: (document.getElementById("fdp-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("fdp-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("fdp-compensation-seats")), OverhangSeatsHTML: (document.getElementById("fdp-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "FDP", FivePercentThreshold: true, Districtlist: fdp_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("fdp-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("fdp-seats-won-directly")), ListSeatsHTML: (document.getElementById("fdp-list-seats")), SeatsAllocatedHTML: (document.getElementById("fdp-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("fdp-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("fdp-compensation-seats")), OverhangSeatsHTML: (document.getElementById("fdp-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("fdp-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("fdp-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-02-total-seats"))},
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     {DistrictNumber: "11", DistrictName: "Lichtenberg", SeatsWonDirectlyHTML: (document.getElementById("fdp-11-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-11-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-11-total-seats"))},
                     {DistrictNumber: "12", DistrictName: "Reinickendorf", SeatsWonDirectlyHTML: (document.getElementById("fdp-12-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("fdp-12-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("fdp-12-total-seats"))},
             ], },
-            {Partyname: "Piraten", FivePercentThreshold: true, Districtlist: piraten_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("piraten-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("piraten-seats-won-directly")), ListSeatsHTML: (document.getElementById("piraten-list-seats")), SeatsAllocatedHTML: (document.getElementById("piraten-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("piraten-seats-allocated2")), CompensationSeatsHTML: (document.getElementById("piraten-compensation-seats")), OverhangSeatsHTML: (document.getElementById("piraten-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, Array1: [], Array2: [], Array3: [], Array4: [],
+            {Partyname: "Piraten", FivePercentThreshold: true, Districtlist: piraten_districtlist_boolean, ListSeats: 0, OverhangSeats: 0, SecondaryVotePercentageHTML: (document.getElementById("piraten-secondary-vote-percentage")), SeatsWonDirectlyHTML: (document.getElementById("piraten-seats-won-directly")), ListSeatsHTML: (document.getElementById("piraten-list-seats")), SeatsAllocatedHTML: (document.getElementById("piraten-seats-allocated")), SeatsAllocated2HTML: (document.getElementById("piraten-seats-allocated2")), CompensationSeats: 0, CompensationSeatsHTML: (document.getElementById("piraten-compensation-seats")), OverhangSeatsHTML: (document.getElementById("piraten-overhang-seats")), DistrictSeatsEstimatesTotal: 0, DistrictSeatsEstimatesTotal2: 0, LargestParliamentSizeEstimate: false, Array1: [], Array2: [], Array3: [], Array4: [],
             Districtdata: [
                     {DistrictNumber: "01", DistrictName: "Mitte", SeatsWonDirectlyHTML: (document.getElementById("piraten-01-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-01-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-01-total-seats"))},
                     {DistrictNumber: "02", DistrictName: "Friedrichshain-Kreuzberg", SeatsWonDirectlyHTML: (document.getElementById("piraten-02-seats-won-directly")), Districtlist: 0, DistrictlistHTML: (document.getElementById("piraten-02-list-seats")), OverhangSeats: 0, TotalSeatsHTML: (document.getElementById("piraten-02-total-seats"))},
@@ -273,12 +273,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const LandlistSeats_Total_HTML = document.getElementById("total-landlist-seats") 
 
 // 0.5 Get the actual data depending on the analysis year selected     
+            const year2006 = document.getElementById("2006")   
             const year2011 = document.getElementById("2011")       
             const year2016 = document.getElementById("2016")
             const year2021 = document.getElementById("2021")
             const year2023 = document.getElementById("2023")
 
-            if (year2011.checked) {
+            if (year2006.checked) {
+                data = data_2006
+            }
+            else if (year2011.checked) {
                 data = data_2011
             }
             else if (year2016.checked) {
@@ -430,7 +434,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }
                             District.OverhangSeats = OverhangSeats
                             Party.OverhangSeats+= OverhangSeats
-                            OverhangSeatsTotal+= OverhangSeats    
+                            OverhangSeatsTotal+= OverhangSeats  
+                            let Districtlist = SeatsAllocated - District.SeatsWonDirectly
+                            District.Districtlist = Districtlist  
                         }
                     }        
                 }
@@ -447,6 +453,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             ParliamentSize = ParliamentSize.sort().reverse()[0]
+
+            for (let Party of Parties) {
+                if (Party.FivePercentThreshold && ((Party.SeatsWonDirectly >= Party.SeatsAllocated) || Party.Districtlist)) {
+                    if (Party.ParliamentSizeEstimate === ParliamentSize) {
+                        Party.LargestParliamentSizeEstimate = true
+                    }
+                }
+            }        
 
 // 2.4 Redo step 2.2 for the new parliament size and estimate possible compensation seats for each party
             for (let Party of Parties) {
@@ -497,7 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     SeatsWonDirectlyTotal+= SeatsWonDirectly
 
 
-                    if (Party.Districtlist) {
+                    if (Party.Districtlist && (Party.LargestParliamentSizeEstimate === false)) {
                         for (let District of Party.Districtdata) {
                             let SeatsAllocated = calcSeatsAllocatedDirect (District.SecondaryVotes, Party.SeatsAllocated2, Party.SecondaryVotes, District.SeatsWonDirectly)
                             District.SeatsAllocated = SeatsAllocated
@@ -516,7 +530,23 @@ document.addEventListener("DOMContentLoaded", () => {
                             District.Districtlist = Districtlist
                         }
                     }
-                }    
+              
+                    else if (Party.Districtlist  && (Party.LargestParliamentSizeEstimate === true)) {
+                        for (let District of Party.Districtdata) {
+                            let SeatsAllocated = District.SeatsAllocated
+                            if (District.SeatsAllocated >= District.SeatsWonDirectly) {
+                                SeatsAllocated = District.SeatsAllocated
+                            }
+                            else if (District.SeatsAllocated < District.SeatsWonDirectly) {
+                                SeatsAllocated = District.SeatsWonDirectly
+                            }
+                            District.SeatsAllocated = SeatsAllocated
+                            Party.DistrictSeatsEstimatesTotal2+= SeatsAllocated
+                            let Districtlist = SeatsAllocated - District.SeatsWonDirectly
+                            District.Districtlist = Districtlist
+                        }
+                    }
+                }  
             }    
 
 // 3 Assign output variables for HTML document       
@@ -530,8 +560,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             for (let Party of Parties) {
                 Party.SecondaryVotePercentageHTML.innerHTML = Party.SecondaryVotePercentage
-                Party.SeatsAllocatedHTML.innerHTML = Party.SeatsAllocated           
+                Party.SeatsAllocatedHTML.innerHTML = Party.SeatsAllocated
                 Party.SeatsAllocated2HTML.innerHTML = Party.SeatsAllocated2
+                if (Party.SeatsAllocated2 === 0) {
+                    Party.SeatsAllocated2HTML.style.backgroundColor = "orange"
+                }
+                else if (Party.SeatsAllocated2 > 0) {
+                    Party.SeatsAllocated2HTML.style.backgroundColor = "white"
+                }
                 Party.SeatsWonDirectlyHTML.innerHTML = Party.SeatsWonDirectly
                 Party.OverhangSeatsHTML.innerHTML = Party.OverhangSeats
                 Party.ListSeatsHTML.innerHTML = Party.ListSeats
@@ -542,11 +578,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     District.DistrictlistHTML.innerHTML = District.Districtlist
                     District.TotalSeatsHTML.innerHTML = District.SeatsWonDirectly + District.Districtlist
 // Edit the background color of district summary cells depending on result             
-                    if (District.SeatsWonDirectly + District.Districtlist === 0) {
+                    if (Party.FivePercentThreshold) {
+                        if (District.SeatsWonDirectly + District.Districtlist === 0) {
                             District.TotalSeatsHTML.style.backgroundColor = "red"
-                    }
-                    else if (District.SeatsWonDirectly + District.Districtlist > 0) {
+                        }
+                        else if (District.SeatsWonDirectly + District.Districtlist > 0) {
                             District.TotalSeatsHTML.style.backgroundColor = "green"
+                        }
+                    }
+                    else if (Party.FivePercentThreshold === false) {
+                            District.TotalSeatsHTML.style.backgroundColor = "white"
                     }
                 }
                 SeatsWonDirectly_01_Total+= Party.Districtdata[0].SeatsWonDirectly
