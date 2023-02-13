@@ -50,7 +50,7 @@ const data_2023 = {
             {DistrictNumber: "07", SecondaryVotes : 12566, SeatsWonDirectly : 0},
             {DistrictNumber: "08", SecondaryVotes : 14522, SeatsWonDirectly : 0},
             {DistrictNumber: "09", SecondaryVotes : 20672, SeatsWonDirectly : 1},
-            {DistrictNumber: "10", SecondaryVotes : 15801, SeatsWonDirectly : 1},
+            {DistrictNumber: "10", SecondaryVotes : 15801, SeatsWonDirectly : 0},
             {DistrictNumber: "11", SecondaryVotes : 21526, SeatsWonDirectly : 2},
             {DistrictNumber: "12", SecondaryVotes : 4805, SeatsWonDirectly : 0},]},
         {Partyname: "AfD", SecondaryVotes : 137810, SeatsWonDirectly : 2, Districtdata: [

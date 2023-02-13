@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     SortingArray1.push(AllocatedSeatNumberFraction)
                 }
                 else if (Party.FivePercentThreshold === true) {
-                    let SeatsAllocated = calcSeatsAllocatedDirect (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal, Party.SeatsWonDirectly)
+                    let SeatsAllocated = calcSeatsAllocated (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal)
                     Party.SeatsAllocated = SeatsAllocated
                     SeatsEstimatesTotal+= SeatsAllocated
                     let AllocatedSeatNumberFraction = calcAllocatedSeatNumberFractionDirect (Party.SecondaryVotes, ParliamentNormSize, SecondaryVotesTotal, Party.SeatsWonDirectly)
