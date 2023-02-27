@@ -32,4 +32,4 @@ To run the calculator, simply copy the files to a web environment making sure th
 </ul>
 <strong>Screenshot of the calculator in action</strong>
 
-<img width="1261" alt="image" src="https://user-images.githubusercontent.com/3532451/214544128-e2d70fa8-9bc5-4707-8e89-f727bf7c77e5.png">
+<img width="1261" alt="image" src="https://user-images.githubusercontent.com/3532451/214544128-e2d70fa8-9bc5-4707-8e89-f727bf7c77e5.png"><img width="1260" alt="Bildschirmfoto 2023-02-27 um 14 39 46" src="https://user-images.githubusercontent.com/3532451/221578891-2ce848fc-015a-4992-8267-38fb2d9ac804.png">
