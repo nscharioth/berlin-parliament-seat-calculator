@@ -7,7 +7,7 @@ Of the 6 parties currently represented in the Berlin state parliament, the SPD, 
 
 This calculator allows the user to simulate the effect of a party switching from a state-wide-list to district lists and vice versa. Because the overall size of parliament is often dependent on the number of so called overhang seats (directly won seats above the number of seats allocated by proportional representation alone), parliament's size would change and this is accounted for in the calculator.
 
-At present, the calculator allows the user to estimate the effects based on the 2006, 2011, 2016 or 2021 election results. Further data can, however, be easily added. 
+At present, the calculator allows the user to estimate the effects based on the 2006, 2011, 2016, 2021 and 2023 election results. Further data can, however, be easily added. 
 
 The output table summarizes the situation at the overall level by party. It gives further detail on the type of seats won by each party. E.g. how many have been won directly and how many were allocated via lists. Further detail is given on overhang (Überhangmandate) and compensation (Ausgleichsmandate) type of seats. 
 
@@ -15,7 +15,7 @@ What is more, the output table shows the situation on the district level for eac
 
 <strong>Running the Code</strong>
 
-The calculator works as a simple HTML document (seat_calculator.html) supplied by a Javascript file for the seat calculation (seat_calculator.js) as well as the data (data_2006.js, data_2011.js, data_2016.js and data_2021.js). A CSS file adjusts the HTML for easier accessiblity. 
+The calculator works as a simple HTML document (seat_calculator.html) supplied by a Javascript file for the seat calculation (seat_calculator.js) as well as the data (data_2006.js, data_2011.js, data_2016.js, data_2021 and data_2023.js). A CSS file adjusts the HTML for easier accessiblity. 
 
 To run the calculator, simply copy the files to a web environment making sure the files sit in the same directory.
 
@@ -28,8 +28,9 @@ To run the calculator, simply copy the files to a web environment making sure th
 <li>data_2011.js: data for the 2011 Berlin state election</li>
 <li>data_2016.js: data for the 2016 Berlin state election</li>
 <li>data_2021.js: data for the 2021 Berlin state election</li>
+<li>data_2023.js: data for the 2021 Berlin state election</li>
 <li>data_empty.js: empty data for further elections</li>
 </ul>
 <strong>Screenshot of the calculator in action</strong>
 
-<img width="1261" alt="image" src="https://user-images.githubusercontent.com/3532451/214544128-e2d70fa8-9bc5-4707-8e89-f727bf7c77e5.png">
+<img width="1260" alt="Bildschirmfoto 2023-02-27 um 14 39 46" src="https://user-images.githubusercontent.com/3532451/221578891-2ce848fc-015a-4992-8267-38fb2d9ac804.png">

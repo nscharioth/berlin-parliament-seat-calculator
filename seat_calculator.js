@@ -295,6 +295,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 data = data_2023
             }
 
+            const party_name_left_party = document.getElementById("party-name-left-party")  
+            party_name_left_party.innerHTML = "DIE LINKE"
+            if (year2006.checked) {
+                party_name_left_party.innerHTML = "PDS"
+            }
+
             SecondaryVotesTotalPlusOthers = data["SecondaryVotesTotalPlusOthers"]
             for (let i in Parties) {
                 Parties[i].SecondaryVotes = data["Parties"][i]["SecondaryVotes"]
