@@ -450,13 +450,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 2.3 Estimation of parliament size for each party with district lists given the number of overhang seats, maximum equals new parliament size
             for (let Party of Parties) {
-                if (Party.FivePercentThreshold && ((Party.SeatsWonDirectly >= Party.SeatsAllocated) || Party.Districtlist)) {
+                if (Party.FivePercentThreshold && Party.Districtlist) {
                     let PartySeats = Party.SeatsAllocated + Party.OverhangSeats
                     let ParlSizeEstimateUnrounded = PartySeats * SecondaryVotesTotal / Party.SecondaryVotes
                     let ParliamentSizeEstimate = Math.round(ParlSizeEstimateUnrounded)
                     Party.ParliamentSizeEstimate = ParliamentSizeEstimate
                     ParliamentSize.push(ParliamentSizeEstimate)
                 }
+                else if (Party.FivePercentThreshold && (Party.SeatsWonDirectly >= Party.SeatsAllocated)) {
+                    let PartySeats = Party.SeatsWonDirectly
+                    let ParlSizeEstimateUnrounded = PartySeats * SecondaryVotesTotal / Party.SecondaryVotes
+                    let ParliamentSizeEstimate = Math.round(ParlSizeEstimateUnrounded)
+                    Party.ParliamentSizeEstimate = ParliamentSizeEstimate
+                    ParliamentSize.push(ParliamentSizeEstimate)
+                }    
+
             }
             ParliamentSize = ParliamentSize.sort().reverse()[0]
 
